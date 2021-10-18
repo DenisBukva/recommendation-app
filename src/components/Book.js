@@ -21,6 +21,7 @@ function Book() {
     const [loading, setLoading] = useState(false);
     const [cards, setCards] = useState([]);
     const [modal, setModal] = useState(false);
+    const [msg, setMsg] = useState('');
 
     const [showRecomend, setShowRecommend] = useState(false);
     const toggle = () => setModal(!modal);
@@ -42,6 +43,7 @@ function Book() {
                 setLoading(true);
                 setShowRecommend(true);
                 console.log(err.response);
+                setMsg('Please enter the exact name of the book :)')
             });
     };
 
@@ -90,7 +92,7 @@ function Book() {
         if (loading) {
             return (
                 <div className='d-flex justify-content-center mt-3'>
-                    {/* <Spinner style={{ width: '3rem', height: '3rem' }} /> */}
+                   <h1 style={{fontSize:'35px', color:'red', border:'2px, solid red'}}>{msg}</h1> 
                 </div>
             );
         } else {
