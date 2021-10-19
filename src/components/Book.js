@@ -13,6 +13,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import axios from 'axios';
 import BookCard from './BookCard';
+import FormGroup from 'reactstrap/lib/FormGroup';
 
 function Book() {
 
@@ -57,7 +58,7 @@ function Book() {
 
                 <h1
                     className='display-2 text-center text-white mb-3'
-                    style={{ zIndex: 2, fontSize: '50px', marginTop:'5px' }}
+                    style={{ zIndex: 2, fontSize: '40px' }}
                 >
                     Book Recommender
                 </h1>
@@ -73,15 +74,18 @@ function Book() {
                                 <i className='fas fa-search'></i>
                             </Button>
                         </InputGroupAddon>
+                        </InputGroup>
 
-                        {showRecomend && <InputGroupAddon style={{ marginLeft: '200px', marginTop: '20px', width: '60%' }} addonType='append'  >
-                            <Button style={{height:'40px',width:'150px', padding:'3px', borderRadius:'10px'}} color='primary' onClick={toggle}>
+                        <div className='d-flex text-white justify-content-center'>
+                        {showRecomend && <FormGroup style={{ marginLeft: '200px', marginTop: '20px', width: '60%' }} addonType='append'  >
+                            <Button id='btn-recomend' style={{height:'40px',width:'200px', padding:'3px', borderRadius:'10px'}} color='primary' onClick={toggle}>
                                 Recommended
                             </Button>
-                        </InputGroupAddon>}
+                        </FormGroup>}
+                        </div>
 
 
-                    </InputGroup>
+                   
 
                 </div>
             </div>
